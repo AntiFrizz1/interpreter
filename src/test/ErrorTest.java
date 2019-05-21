@@ -50,7 +50,10 @@ public class ErrorTest implements Test {
             "(1%0)",
 
             "f(x,y)={0}\n" +
-            "(1/f(1,1))"
+            "(1/f(1,1))",
+
+            "f()={1}\n" +
+            "f()"
     };
 
     private Exception[] testAnswers = new Exception[] {
@@ -67,7 +70,8 @@ public class ErrorTest implements Test {
             new AbstractException("RUNTIME ERROR", "(y/f(y))", 2),
             new AbstractException("PARAMETER NOT FOUND", "a", 1),
             new AbstractException("RUNTIME ERROR", "(1%0)", 1),
-            new AbstractException("RUNTIME ERROR", "(1/f(1,1))", 2)
+            new AbstractException("RUNTIME ERROR", "(1/f(1,1))", 2),
+            new ParserException()
     };
     private String testName = "ErrorTest";
 
