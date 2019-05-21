@@ -1,1 +1,3 @@
-# iterpritator
+# interpreter
+
+Interpreter for JetBrains task
