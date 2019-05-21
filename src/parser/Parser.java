@@ -65,9 +65,6 @@ public class Parser {
             lexer.nextToken();
         }
 
-        /*switch (lexer.getCurToken()) {
-
-        }*/
         return new Identifier(string.toString(), lexer.getCurLine());
     }
 
@@ -122,14 +119,12 @@ public class Parser {
     }
 
     private ArgumentList argumentList() throws ParserException {
-        //проверить когда это возможно
         List<Expression> expressionList = new ArrayList<>();
         expressionList.add(expression());
         while (lexer.getCurToken() == LexerToken.comma) {
             lexer.nextToken();
             expressionList.add(expression());
         }
-        //проверить когда можно вернуть
         return new ArgumentList(expressionList);
     }
 
